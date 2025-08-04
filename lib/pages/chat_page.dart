@@ -48,12 +48,12 @@ class ChatPage extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: const Color.fromARGB(255, 29, 62, 90),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: IconButton(
                     onPressed: sendMessage,
-                    icon: Icon(Icons.arrow_upward, color: Colors.white),
+                    icon: Icon(Icons.send, color: Colors.white),
                   ),
                 ),
               ],
@@ -84,17 +84,17 @@ class ChatPage extends StatelessWidget {
     );
   }
 
-  Widget _buildMessageItem(DocumentSnapshot doc) {
-    Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-    bool isCurrentUser = data['senderID'] == _authService.getCurentUser()!.uid;
-    var alignment = isCurrentUser
-        ? Alignment.center
-        : Alignment.centerLeft;
-    return Container(alignment:alignment,child:  Column(
-      crossAxisAlignment: isCurrentUser?CrossAxisAlignment.end:CrossAxisAlignment.start,
-      children: [
-        ChatBubble(isCurrentUser: isCurrentUser, message: data['message'])
-      ]
-    ));
-  }
+Widget _buildMessageItem(DocumentSnapshot doc) {
+  Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+  bool isCurrentUser = data['senderID'] == _authService.getCurentUser()!.uid;
+
+  return Align(
+    alignment: isCurrentUser ? Alignment.centerRight : Alignment.centerLeft,
+    child: ChatBubble(
+      isCurrentUser: isCurrentUser,
+      message: data['message'],
+    ),
+  );
+}
+
 }
