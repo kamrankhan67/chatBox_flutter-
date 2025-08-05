@@ -23,10 +23,11 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        foregroundColor: Theme.of(context).colorScheme.secondary,
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Colors.grey,
+        backgroundColor: Colors.transparent,
         title: Text(recieverEmail),
       ),
+      backgroundColor: Theme.of(context).colorScheme.tertiary,
       body: Padding(
         padding: EdgeInsetsGeometry.only(bottom: 20),
         child: Column(
@@ -48,7 +49,7 @@ class ChatPage extends StatelessWidget {
                   height: 50,
                   width: 50,
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 29, 62, 90),
+                    color: const Color.fromARGB(255, 98, 157, 99) ,
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: IconButton(
