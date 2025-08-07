@@ -89,13 +89,13 @@ class _RegisterPageState extends State<RegisterPage> {
               Icon(
                 Icons.message,
                 size: 60,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
               ),
               const SizedBox(height: 50),
               Text(
                 "Let's create an account for you",
                 style: TextStyle(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 16,
                 ),
               ),

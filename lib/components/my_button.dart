@@ -19,7 +19,7 @@ class MyButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: TextStyle(color: const Color.fromARGB(255, 73, 73, 73)),
+            style: TextStyle(color:Theme.of(context).colorScheme.inversePrimary),
           ),
         ),
       ),

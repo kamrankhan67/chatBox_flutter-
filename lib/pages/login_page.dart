@@ -44,13 +44,13 @@ class _LoginPageState extends State<LoginPage> {
               Icon(
                 Icons.message,
                 size: 60,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
               ),
               SizedBox(height: 50),
               Text(
                 "Welcome Back ,You have been missed!",
                 style: TextStyle(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 16,
                 ),
               ),
